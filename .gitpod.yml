@@ -1,20 +1,31 @@
-image: gitpod/workspace-full
-tasks:
-  - init: yarn install
-    command:  . ./gitpod-setup.sh && npm run dev
-    name: Setup script
-ports:
-  - port: 8080 # Application
-    onOpen: ignore
-  - port: 8888 # Webpack dev server
-    onOpen: open-browser
+image: 
+  file: Dockerfile
+
+vscode:
+  extensions:
+    - vsls-contrib.codetour
+    - auchenberg.vscode-browser-preview
+    - synedra.auto-run-command
+
+checkoutLocation: "."
+
 github:
   prebuilds:
     master: true
-    branches: false
-    pullRequests: false
+    branches: true
+    pullRequests: true
     pullRequestsFromForks: false
-    addCheck: false
+    addCheck: true
     addComment: false
-    addBadge: false
+    addBadge: true
     addLabel: false
+ports:
+  - port: 8888
+    onOpen: open-preview
+    visibility: public
+  - port: 3000
+    onOpen: ignore 
+    visibility: public
+  - port: 8443
+    onOpen: ignore
+    visibility: public
