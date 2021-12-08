@@ -20,7 +20,6 @@ Once the Astra credentials are provided, the necessary tables are created in the
 Follow the instructions below to get started.
 
 ## Prerequisites
-* git installed on your local system
 * github account
 * [node 15 and npm 7 or later](https://www.whitesourcesoftware.com/free-developer-tools/blog/update-node-js/)
 
@@ -38,22 +37,8 @@ Click the button to login or register with Datastax.
 |Field| Value|
 |---|---|
 |**database name**| `netlify` |
-|**keypace**| `todos` |
+|**keypace**| `remix` |
 |**Cloud Provider**| *Use the one you like, click a cloud provider logo,  pick an Area in the list and finally pick a region.* |
-
-
-2. **Deploy to Netlify**
-- <details><summary> What does the netlify deploy button do?</summary>The Netlify deploy button will:<ul>
-    <li>Create a new repository for you on Github</li>
-    <li>Create a site on Netlify</li>
-    <li>Link the two together.</li></ul>
-</details>
-
-- Click the button to deploy:
-  [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/datastaxdevs/netlify-astra-example)
- * <details><summary>Show me!</summary>
-    <img src="https://github.com/datastaxdevs/workshop-spring-stargate/raw/main/images/tutorials/astra-create-token.gif?raw=true" />
-    </details>
 
 ### 3. Access YOUR GitHub repository
 
@@ -64,37 +49,9 @@ Click the button to login or register with Datastax.
     </details>
 
 ### 4. Launch GitPod IDE
-- Click the button to launch the GitPod IDE from **YOUR** repository.
+CLICK HERE to launch GitPod
 
-* _Supported by <img src="tutorial/images/chrome-logo.svg" height="20"/> Chrome and <img src="tutorial/images/firefox-logo.svg" height="20"/> Firefox_
-
-#### WAIT! Before moving on ensure you are working out of YOUR repository, not the datastaxdevs repository.
-
-If you are still using the `datastaxdevs` repo please ensure to follow the previous step, [step3](#3-clone-your-github-repository) to get to your repo.
-
- * Ok, I've got it, just give me the button already
- * <details>
-     <summary>CLICK HERE to launch GitPod</summary>
-
-     [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/from-referrer/)
-   </details>
-   
-#### WAIT! Before moving on ensure you are working out of YOUR repository, not the datastaxdevs repository.
-* From your GitPod terminal execute the following command
-```
-git remote -v
-```
-
-If the result returned from the command displays **`datastaxdevs`** then you are not in the correct repository. If this is the case please [repeat step 3 above](#3-access-your-github-repository), otherwise just move on to the next step.
-
-### 5. Install the Netlify CLI (Command Line Interface)
- * In the `workshop-astra-tik-tok` directory run the following command to install the netlify-cli
- ```
- npm install -g netlify-cli
-```
- * <details><summary>Show me!</summary>
-    <img src="tutorial/images/netlify-install-cli.png?raw=true" />
-    </details>
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/synedra/remix
 
 ### 6. Generate application token to securely connect to the database
 
@@ -130,14 +87,12 @@ Notice the clipboard icon at the end of each value.
 ### 7. Configure and connect database
  * In the repository directory run the following command to set up your Astra DB environment. This will verify the database you created earlier or create a new one for you if it can't find your database.
  ```
- npm exec astra-setup tiktok_workshop_db tiktok_keyspace
+ astra-setup workshops remix
 ```
 
 <details>
 <summary>What does astra-setup do?</summary>
-    To setup your ASTRA instance, you want to run `npm exec astra-setup`
-
-    This will do the following:
+    Running 'astra-setup' will do the following:
     * Have you go to your [Astra DB instance](https://datastx.io/workshops) to register or login. There is no credit card required to sign up. The 'Pay as you go' option gives you a huge amount of transactions for free:
         * 30 million reads
         * 5 million writes
